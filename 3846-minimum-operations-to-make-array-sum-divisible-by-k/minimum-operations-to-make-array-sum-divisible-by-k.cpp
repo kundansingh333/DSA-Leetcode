@@ -5,7 +5,7 @@ public:
         for(auto it:nums){
             sum+=it;
         }
-        int remainder=sum%k;
-        return remainder;
+        
+        return sum%k;
     }
 };
