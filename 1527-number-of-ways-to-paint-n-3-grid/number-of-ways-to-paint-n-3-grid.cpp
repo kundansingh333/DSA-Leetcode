@@ -9,9 +9,9 @@ public:
         n--;
         while(n>0){
             long long next_aba= (3*aba + 2*abc) %M;
-            long long next_abc=(2*aba + 2*abc) %M;
+            abc=(2*aba + 2*abc) %M;
             aba=next_aba;
-            abc=next_abc;
+            // abc=next_abc;
             n--;
         }
         return (aba+abc)%M;
