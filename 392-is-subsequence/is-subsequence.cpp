@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool isSubsequence(string s, string t) {
-        if(s.length()==0 && t.length()==0) return true;
+        if(s.length()==0) return true;
         int s_p=0;
         int t_p=0;
 
@@ -10,11 +10,13 @@ public:
                 s_p++;
             }
             t_p++;
-            
+            if(s_p==s.length()){
+                return true;
+            }
         }
             
         
-        return s_p==s.length();
+        return false;
         
     }
 };
