@@ -14,10 +14,10 @@ public:
             return t[n][m];
         }
         if(n==0){
-            return getSum(s2,m);
+            return t[n][m] =  getSum(s2,m);
         }
         if(m==0){
-            return getSum(s1,n);
+            return t[n][m]= getSum(s1,n);
         }
         
         if(s1[n-1]==s2[m-1]){
