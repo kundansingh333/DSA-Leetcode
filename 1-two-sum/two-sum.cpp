@@ -22,5 +22,23 @@ public:
     }
     return {};
 
+    // int n=nums.size();
+    // int i=0;
+    // int j=n-1;
+
+
+    // vector<vector<int>>ans;
+    // while(i<j){
+    //     int sum=nums[i]+nums[j];
+    //     if(sum<target){
+    //         i++;
+    //     }else if(sum>target){
+    //         j++;
+    //     }else{
+    //         ans.push_back({nums[i],nums[j]});
+    //     }
+    // }
+    // return ans;
+
     }
 };
