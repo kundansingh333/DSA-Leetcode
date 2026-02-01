@@ -28,7 +28,7 @@ public:
                 high=mid-1;
             }
         }
-        
+        if(start==-1) return {-1,-1};
         int n_low=0;
         int n_high=nums.size()-1;
         int end=-1;
