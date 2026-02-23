@@ -3,7 +3,8 @@ public:
     bool hasAllCodes(string s, int k) {
         int i=0;
         int j=0;
-        int total=pow(2,k);
+        // int total=pow(2,k);
+        int total=1<<k;
         int len=s.length();
         unordered_set<string> mySet;
         string st="";//
