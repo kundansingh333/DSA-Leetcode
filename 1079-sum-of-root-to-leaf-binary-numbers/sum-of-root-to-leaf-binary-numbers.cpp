@@ -17,19 +17,11 @@ int total = 0;
         if (root == nullptr) {
             return;
         }
-        
-        // Multiplying by 2 dynamically builds the binary number in base-10!
-        // Parent: 1
-        // Child: (1 * 2) + 0 = 2  (Binary '10')
-        // Child: (2 * 2) + 1 = 5  (Binary '101')
         currentSum = (currentSum * 2) + root->val;
-        
-        // If it's a leaf node, add it to the total
         if (root->left == nullptr && root->right == nullptr) {
             total += currentSum;
             return;
         }
-        
         preOrder(root->left, currentSum);
         preOrder(root->right, currentSum);
     }
