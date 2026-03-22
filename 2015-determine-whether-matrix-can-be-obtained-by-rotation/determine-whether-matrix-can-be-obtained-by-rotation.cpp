@@ -5,7 +5,7 @@ public:
         int n= mat[0].size();
         vector<vector<int>>transposed(n,vector<int>(m,0));
         int count=0;
-        while(count<=4){
+        while(count<4){
             for(int i=0; i<m; i++){
                 for(int j=0; j<n; j++){
                     transposed[i][j]=mat[j][i];
