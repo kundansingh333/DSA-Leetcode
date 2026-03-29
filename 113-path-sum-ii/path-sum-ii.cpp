@@ -14,7 +14,7 @@ public:
     vector<vector<int>>ans;
     
     // int count =0;
-    void fun(TreeNode* root , int target, int sum ,vector<int> diary){
+    void fun(TreeNode* root , int target, int sum ,vector<int> &diary){
         if(root==nullptr) return;
         sum+=root->val;
         diary.push_back(root->val);
