@@ -28,6 +28,7 @@ public:
         }
         fun(root->left,target,sum,diary);
         fun(root->right,target,sum,diary);
+        diary.pop_back();
         return;
     }
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
