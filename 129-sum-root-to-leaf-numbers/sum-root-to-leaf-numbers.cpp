@@ -12,20 +12,19 @@
 class Solution {
 public:
     int totalSum=0;
-    void fun(TreeNode* root,int sum,int unit){
+    void fun(TreeNode* root,int sum){
         if(root==nullptr) return;
-        sum=(sum*unit)+root->val;
-        // unit=unit*10;
+        sum=(sum*10)+root->val;
         if(root->left == nullptr && root->right==nullptr){
             totalSum+=sum;
             return;
         }
-        fun(root->left,sum,unit);
-        fun(root->right,sum,unit);
+        fun(root->left,sum);
+        fun(root->right,sum);
         return; 
     }
     int sumNumbers(TreeNode* root) {
-        fun(root,0,10);
+        fun(root,0);
         return totalSum;
     }
 };
