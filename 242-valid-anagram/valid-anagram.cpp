@@ -6,15 +6,23 @@ public:
         if(s1!=t2){
             return false;
         }
-        unordered_map<char,int>mp;
-        for(auto it:s){
-            mp[it]++;
-        }
+        // unordered_map<char,int>mp;
+        // for(auto it:s){
+        //     mp[it]++;
+        // }
+        // for(int i=0; i<t.length(); i++){
+        //     if(mp[t[i]]==false){
+        //         return false;
+        //     }
+        //     mp[t[i]]--;
+        // }
+        // return true;
+        sort(s.begin(),s.end());
+        sort(t.begin(),t.end());
         for(int i=0; i<t.length(); i++){
-            if(mp[t[i]]==false){
+            if(s[i]!=t[i]){
                 return false;
             }
-            mp[t[i]]--;
         }
         return true;
     }
