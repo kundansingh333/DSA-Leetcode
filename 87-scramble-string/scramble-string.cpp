@@ -8,17 +8,33 @@ public:
         if(a.length()<=1){
             return false;
         }
-        //makeing the key
+        int n=a.length();
+        //making the key
         string key=a;
         key.push_back(' ');
         key.append(b);
+
+        //anagram check
+        int count[26]={0};
+        for(int i=0; i<n; i++){
+            count[a[i]-'a']++;
+            count[b[i]-'a']--;
+        }
+        for(int i=0; i<26; i++){
+            if(count[i]!=0){
+                return mp[key]=false;
+            }
+        }
+
+
+
         //return bool value from the map 
         if(mp.find(key)!=mp.end()){
             return mp[key];
         }
 
 
-        int n=a.length();
+        
         bool flag=false;
         for(int i=1; i<=n-1; i++){
             bool c1=solve(a.substr(0,i),b.substr(n-i,i))==true && solve(a.substr(i,n-i),b.substr(0,n-i));
@@ -35,6 +51,7 @@ public:
         return mp[key]=flag;
     }
     bool isScramble(string s1, string s2) {
+        mp.clear();
         if(s1.length()!=s2.length()){
             return false;
         }
