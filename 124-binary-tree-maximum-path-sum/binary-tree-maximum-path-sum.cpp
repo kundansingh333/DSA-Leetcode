@@ -20,16 +20,21 @@ public:
         
 
         //hypothesis
-        int left=max(0,solve(root->left,res));
-        int right=max(0,solve(root->right,res));
+        // int left=max(0,solve(root->left,res));
+        // int right=max(0,solve(root->right,res));
 
 
-        // int left=solve(root->left,res);
-        // int right=solve(root->right,res);
+        int left=solve(root->left,res);
+        int right=solve(root->right,res);
 
         //induction step
-        int temp=max(left,right)+root->val;
-        int ans=left+right+root->val;
+        // int temp=max(left,right)+root->val;
+        // int ans=left+right+root->val;
+        // res=max(res,ans);
+        // return temp;
+
+        int temp=max(max(left,right)+root->val,root->val);
+        int ans=max(temp,left+right+root->val);
         res=max(res,ans);
         return temp;
 
