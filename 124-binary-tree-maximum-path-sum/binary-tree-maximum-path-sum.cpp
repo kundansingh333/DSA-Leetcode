@@ -23,6 +23,10 @@ public:
         int left=max(0,solve(root->left,res));
         int right=max(0,solve(root->right,res));
 
+
+        // int left=solve(root->left,res);
+        // int right=solve(root->right,res);
+
         //induction step
         int temp=max(left,right)+root->val;
         int ans=left+right+root->val;
