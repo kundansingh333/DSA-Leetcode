@@ -6,12 +6,15 @@ public:
         reverse(s.begin(),s.end());
     }
     bool rotateString(string s, string goal) {
+        if(s.length()!=goal.length()) return false;
+        if(s==goal) return true;
         int n=s.length();
         for(int i=0; i<s.length(); i++){
+            rotate(s,n);
             if(s==goal){
                 return true;
             }
-            rotate(s,n);
+            
         }
         return false;
     }
