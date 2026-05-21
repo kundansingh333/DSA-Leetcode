@@ -34,7 +34,7 @@ public:
             string current="";
             for(auto ch:s1){
                 current+=ch;
-                s.insert(current);
+                s.emplace(current);
             }
         }
         //2.matching the prefixes from set to arr2
