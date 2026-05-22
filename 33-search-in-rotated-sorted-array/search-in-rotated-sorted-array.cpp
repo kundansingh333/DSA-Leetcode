@@ -1,115 +1,29 @@
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
-
-
-        // for(int i=0; i<nums.size(); i++){
-        //     if(nums[i]==target){
-        //         return i;
-        //     }
-        // }
-        // return -1;
-
-
-
-
-
-
-
-
-
-
-
-        // int low=0;
-        // int high=nums.size()-1;
-        // int n=nums.size();
-        // int idx=0;
-        // while(low<=high){
-        //     int mid=low+(high-low)/2;
-        //     if(nums[mid]>nums[n-1]){
-        //         low=mid+1;
-        //     }else{
-        //         idx=mid;
-        //         high=mid-1;
-        //     }
-        // }
-        // int f_low=0;
-        // int f_high=idx-1;
-
-        // while(f_low<=f_high){
-        //     int mid=f_low+(f_high-f_low)/2;
-        //     if(nums[mid]==target){
-        //         return mid;
-        //     }else if(nums[mid]<target){
-        //         f_low=mid+1;
-        //     }else{
-        //         f_high=mid-1;
-        //     }
-        // }
-
-
-        // int s_low=idx;
-        // int s_high=n-1;
-
-
-        // while(s_low<=s_high){
-        //     int mid=s_low+(s_high-s_low)/2;
-        //     if(nums[mid]==target){
-        //         return mid;
-        //     }else if(nums[mid]<target){
-        //         s_low=mid+1;
-        //     }else{
-        //         s_high=mid-1;
-        //     }
-        // }
-        // return -1;
-        
-
         int low=0;
         int n=nums.size();
         int high=n-1;
         while(low<=high){
             int mid=low+(high-low)/2;
-            if(nums[mid]==target){
+            if(nums[mid]==target) {
                 return mid;
-            }
-            else if(nums[mid]>nums[n-1]){
-                if(nums[mid]<target){
-                    low=mid+1;
-                }else{
-                    if(nums[0]>target){
-                        low=mid+1;
-                    }else{
-                        high=mid-1;
-                    }
-                }
-            }else{
-                if(nums[mid]>target){
+            }else if(nums[low]<=nums[mid]){
+                if(nums[low]<=target && nums[mid]>=target){
                     high=mid-1;
                 }else{
-                    if(nums[n-1]<target){
-                        high=mid-1;
-                    }else{
-                        low=mid+1;
-                    }
+                    low=mid+1;
+                }
+            }else{
+                if(nums[high]>=target && nums[mid]<=target){
+                    low=mid+1;
+                }else{
+                    high=mid-1;
                 }
             }
-            // else if(nums[low]<=nums[mid]){
-            //     if(nums[low]<=target && target<=nums[mid]){
-            //         high=mid-1;
-            //     }else{
-            //         low=mid+1;
-            //     }
-            // }else{
-            //     if(nums[mid]<=target && nums[high]>=target){
-            //         low=mid+1;
-            //     }else{
-            //         high=mid-1;
-            //     }
-            // }
+
+
         }
         return -1;
-
-
     }
 };
