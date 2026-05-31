@@ -1,24 +1,21 @@
 class Solution {
 public:
-
-
-int getDigitSum(int n) {
-        int sum = 0;
-        while (n > 0) {
-            sum += n % 10; 
-            n /= 10;       
+    int getDigits(int num){
+        int s=0;
+        while(num>0){
+            int rem=num%10;
+            s+=rem;
+            num/=10;
         }
-        return sum;
+        return s;
+        
     }
     int minElement(vector<int>& nums) {
-        int min_element = INT_MAX;
-
-        for (int num : nums) {
-            int current_sum = getDigitSum(num);
-            min_element = min(min_element, current_sum);
+        int mini=INT_MAX;
+        for(int i=0; i<nums.size(); i++){
+            int number= getDigits(nums[i]);
+            mini=min(mini,number);
         }
-
-        return min_element;
-
+        return mini;
     }
 };
