@@ -7,10 +7,7 @@ public:
             s.insert(it);
         }
         int n=s.size();
-        if(count<n){
-            return count;
-        }
-        return n;
+        return min(n,count);
 
 
     }
