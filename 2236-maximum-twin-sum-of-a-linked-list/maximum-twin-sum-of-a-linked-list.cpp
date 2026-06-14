@@ -30,19 +30,6 @@ public:
 
         }
         return maxi;
-        // int count=1;
-        // while(temp->next){
-        //     count++;
-        //     temp=temp->next;
-        // }
-        // int i=0;
-        // int last=count/2-1;
-        // while(temp->next){
-        //     if(i>=0 && i<=last){
-
-        //     }
-        // }
-
-
+        
     }
 };
