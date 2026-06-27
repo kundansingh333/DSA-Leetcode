@@ -8,8 +8,13 @@ public:
             for(int j=i; j<nums.size(); j++){
                 if(nums[j]==target){
                     count++;
+                }else{
+                    count--;
                 }
-                if(count>(j-i+1)/2) maxi++;
+                if(count>0){
+                    maxi++;
+                }
+                // if(count>(j-i+1)/2) maxi++;
             }
         }
         return maxi;
