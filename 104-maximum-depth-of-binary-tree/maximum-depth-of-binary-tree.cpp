@@ -16,9 +16,8 @@ public:
         int l=fun(root->left);
         int r=fun(root->right);
         return 1+max(l,r);
-    }
+    } 
     int maxDepth(TreeNode* root) {
         return fun(root);
-        
     }
 };
