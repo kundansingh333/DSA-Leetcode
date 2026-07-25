@@ -19,8 +19,12 @@ public:
         return secondmaxDigit*maxDigit;
     }
     int maxProduct(int n) {
-        int num=n;
-        long long mxEle = findMaxEle(n);
-        return mxEle;
+        vector<long long>v;
+        while(n){
+            v.push_back(n%10);
+            n=n/10;
+        }
+        sort(v.begin(),v.end());
+        return v[v.size()-1] * v[v.size()-2];
     }
 };
