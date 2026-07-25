@@ -5,11 +5,11 @@ public:
         long long secondmaxDigit=INT_MIN;
         while(n){
             int last_digit = n%10;
-             if((int)maxDigit <= last_digit){
+             if(maxDigit <= last_digit){
                 secondmaxDigit = maxDigit;
                 maxDigit=last_digit;
              }
-         else if((int)secondmaxDigit < last_digit && last_digit < (int)maxDigit){
+            else if((int)secondmaxDigit < last_digit && last_digit < (int)maxDigit){
                  secondmaxDigit = last_digit;
              }
              n=n/10;
