@@ -1,24 +1,22 @@
 class Solution {
 public:
     int longestPalindromeSubseq(string s) {
-        int n=s.length();
         string s1=s;
-        reverse(s.begin(),s.end());
+        reverse(s1.begin(),s1.end());
         string s2=s;
+        int n=s1.length();
         vector<vector<int>>t(n+1,vector<int>(n+1));
-        //initialize
-        for(int i=0; i<n+1; i++){
-            for(int j=0; j<n+1; j++){
+
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
                 if(i==0 || j==0){
                     t[i][j]=0;
                 }
             }
         }
 
-        //choice diagram
-
         for(int i=1; i<n+1; i++){
-            for(int j=1; j<n+1; j++){
+            for(int j=1; j<n+1 ; j++){
                 if(s1[i-1]==s2[j-1]){
                     t[i][j]=1+t[i-1][j-1];
                 }else{
@@ -27,5 +25,6 @@ public:
             }
         }
         return t[n][n];
+
     }
 };
