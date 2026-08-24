@@ -10,8 +10,14 @@ public:
             mp2[ch]++;
         }
 
-        for(auto it=mp2.begin(); it!=mp2.end(); it++){
-            if(mp1[it->first]<it->second) return false;
+        // for(auto it=mp2.begin(); it!=mp2.end(); it++){
+        //     if(mp1[it->first]<it->second) return false;
+        // }
+        // return true;
+        for(auto [key,value]:mp2){
+            if(mp1[key]<value){
+                return false;
+            }
         }
         return true;
 
