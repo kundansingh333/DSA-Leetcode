@@ -11,13 +11,6 @@
 class Solution {
 public:
     vector<int> nodesBetweenCriticalPoints(ListNode* head) {
-        // ListNode* temp=head;
-        // int count=1;
-        // while(temp->next!=nullptr){
-        //     count++;
-        //     temp=temp->next;
-        // }
-        // if(count<=2) return {-1,-1};
         vector<int>index;
         int idx=2;
         ListNode* current=head->next;
