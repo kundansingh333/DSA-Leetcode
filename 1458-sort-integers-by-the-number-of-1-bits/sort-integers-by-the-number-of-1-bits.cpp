@@ -1,28 +1,32 @@
 class Solution {
 public:
-    vector<int> sortByBits(vector<int>& arr) {
-        for(int i=0; i<arr.size()-1; i++){
-            for(int j=i+1; j<arr.size(); j++){
-                int bits1=__builtin_popcount(arr[i]);
-                int bits2=__builtin_popcount(arr[j]);
-                if(bits1>bits2){
-                    int temp=arr[i];
-                    arr[i]=arr[j];
-                    arr[j]=temp;
-                }
-                if(bits1==bits2){
-                    if(arr[i]>arr[j]){
-                    int temp=arr[i];
-                    arr[i]=arr[j];
-                    arr[j]=temp;
-                }
-                    
-                }
-
-            }
-            
-
+    int fun(int n){
+        int count=0;
+        while(n>0){
+            n=n&(n-1);
+            count++;
         }
-        return arr;
+        return count;
+    }
+    struct Element{
+        int val;
+        int newVal;
+    };
+    vector<int> sortByBits(vector<int>& arr) {
+        vector<Element> ans(arr.size());
+        for(int i=0; i<arr.size(); i++){
+            ans[i]={arr[i],fun(arr[i])};
+        }
+        sort(ans.begin(),ans.end(),[](const Element&a,const Element&b){
+            if(a.newVal==b.newVal){
+                return a.val<b.val;
+            }
+            return a.newVal<b.newVal;
+        });
+        vector<int>arrr;
+        for(int i=0; i<arr.size(); i++){
+            arrr.push_back(ans[i].val);
+        }
+        return arrr;
     }
 };
